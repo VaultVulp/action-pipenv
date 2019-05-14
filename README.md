@@ -1,2 +1,2 @@
-# actions-pipenv
-Pipenv Action for Github Actions
+# action-pipenv
+Pipenv for Github Actions
