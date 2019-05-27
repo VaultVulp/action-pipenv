@@ -1,6 +1,6 @@
 FROM python:3
 
-LABEL "com.github.actions.name"="GitHub Action for pipenv"
+LABEL "com.github.actions.name"="Pipenv for Github Actions"
 LABEL "com.github.actions.description"="Use pipenv commands in your GitHub Actions Workflow"
 LABEL "com.github.actions.icon"="package"
 LABEL "com.github.actions.color"="green"
