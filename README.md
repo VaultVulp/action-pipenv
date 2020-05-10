@@ -2,7 +2,7 @@
 
 ## Use pipenv commands in your GitHub Actions Workflow
 
-### Install dependencies and run custom command
+### Install dependencies and run custom command:
 
 ```yaml
   install-test:
@@ -14,7 +14,7 @@
     - name: Install dependecies
       uses: VaultVulp/action-pipenv@v2.0.1
       with:
-        command: install -d # Install all dependencies, including the test ones
+        command: install -d # Install all dependencies, including development ones
     
     - name: Test
       uses: VaultVulp/action-pipenv@v2.0.1
