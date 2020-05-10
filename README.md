@@ -1,27 +1,23 @@
-# action-pipenv
-Pipenv for Github Actions
+# Pipenv for Github Actions
 
-### Example usage
-```
-workflow "Test My App" {
-  on = "push"
-  resolves = ["Run test cases", "Check for vulnerable packages"]
-}
+## Use pipenv commands in your GitHub Actions Workflow
 
-action "Install dependencies" {
-  uses = "VaultVulp/action-pipenv@master"
-  args = "install -d"
-}
+### Install dependencies and run custom command
 
-action "Check for vulnerable packages" {
-  needs = ["Install dependencies"]
-  uses = "VaultVulp/action-pipenv@master"
-  args = "check"
-}
+```yaml
+  install-test:
+    runs-on: ubuntu-latest
 
-action "Run test cases" {
-  needs = ["Install dependencies"]
-  uses = "VaultVulp/action-pipenv@master"
-  args = "run py.test"
-}
+    steps:
+    - uses: actions/checkout@v2 # Checking out the repo
+
+    - name: Install dependecies
+      uses: VaultVulp/action-pipenv@v2.0.0
+      with:
+        command: install -d # Install all dependencies, including the test ones
+    
+    - name: Test
+      uses: VaultVulp/action-pipenv@v2.0.0
+      with:
+        command: run test # Run custom `test` command defined in the `[scripts]` block of Pipfile
 ```
