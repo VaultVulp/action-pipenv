@@ -3,7 +3,7 @@ description: 'Use pipenv commands in your GitHub Actions Workflow.'
 
 inputs:
   command:
-    description: 'pipenv command and it's argument to be executed'
+    description: 'pipenv command and its argument to be executed'
     required: true 
 
 runs:
