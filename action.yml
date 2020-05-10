@@ -1,0 +1,17 @@
+name: 'Pipenv for Github Actions'
+description: 'Use pipenv commands in your GitHub Actions Workflow.'
+
+inputs:
+  command:
+    description: 'pipenv command and it's argument to be executed'
+    required: true 
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.command }}
+
+branding:
+  icon: 'package'
+  color: 'green'
