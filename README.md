@@ -11,7 +11,7 @@
     steps:
     - uses: actions/checkout@v2 # Checking out the repo
 
-    - name: Install dependecies
+    - name: Install dependencies
       uses: VaultVulp/action-pipenv@v2.0.1
       with:
         command: install -d # Install all dependencies, including development ones
